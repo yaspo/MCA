@@ -6,6 +6,10 @@
             Discord username: {{ user.discord.username }}<br>
             osu! username: {{ user.osu.username }}
         </div>
+        {{ value }}
+        <div @click="run">
+            click to run
+        </div>
     </div>
 </template>
 
@@ -15,7 +19,8 @@ import axios from 'axios'
 export default {
     data () {
         return {
-            user: null
+            user: null,
+            value: "0%"
         }
     },
     mounted: async function() {
@@ -23,7 +28,6 @@ export default {
             const data = (await axios.get(`/api/user`)).data;
             
             if (!data.error) {
-                console.log(data.user)
                 this.user = data.user;
             } else {
                 console.log(data.error)
@@ -31,6 +35,14 @@ export default {
         } catch (err) {
             console.log(err);
         }
+    },
+    methods: {
+        async run () {
+            let source = new EventSource(`/api/user/test/2019`)
+            source.onmessage = (event)  => {
+                this.value = event.data
+            }
+        },
     },
 }
 </script>
