@@ -3,7 +3,7 @@ import { User } from '../../../CorsaceModels/user';
 import { PassThrough } from 'stream';
 import { Config } from '../../../config';
 import axios from 'axios'
-import { isLoggedIn } from '../../../CorsaceServer/middleware'
+import { isLoggedIn, isCorsace, isStaff } from '../../../CorsaceServer/middleware'
 
 const userRouter = new Router();
 const config = new Config();
@@ -17,7 +17,7 @@ userRouter.get("/", isLoggedIn, async (ctx) => {
     ctx.body = { user: user.getInfo() }
 })
 
-userRouter.get("/test/:year", async (ctx) => {
+userRouter.get("/test/:year", isLoggedIn, isCorsace, async (ctx) => {
     const stream = new PassThrough()
     ctx.type = 'text/event-stream';
     ctx.body = stream

@@ -1,6 +1,6 @@
 import "reflect-metadata";
 import { Config } from "../../config"
-import { App } from "../../commonRoutes"
+import { App } from "../../CorsaceServer"
 import Mount from 'koa-mount';
 import userRouter from "./user"
 
