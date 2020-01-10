@@ -1,11 +1,9 @@
 import "reflect-metadata";
-import { Config } from "../../config"
 import { App } from "../../CorsaceServer"
 import Mount from 'koa-mount';
 import userRouter from "./user"
 
-const config = new Config()
-const app = new App(config.mca.publicURL, config.mca.keys)
+const app = new App("mca")
 
 app.koa.use(Mount("/user", userRouter.routes()));
 

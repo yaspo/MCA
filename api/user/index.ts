@@ -20,8 +20,8 @@ userRouter.get("/test/:year", isLoggedIn, isCorsace, async (ctx) => {
     let mapDate = `${ctx.params.year}-01-01`;
     let fullMaps = [];
     while (Date.parse(mapDate) < Date.parse("2020-01-01")) {
-        console.log(`https://osu.ppy.sh/api/get_beatmaps?k=${config.osu.v1}&since=${mapDate}`)
-        let maps = (await axios.get(`https://osu.ppy.sh/api/get_beatmaps?k=${config.osu.v1}&since=${mapDate}`)).data
+        console.log(`https://osu.ppy.sh/api/get_beatmaps?k=${config.osuV1}&since=${mapDate}`)
+        let maps = (await axios.get(`https://osu.ppy.sh/api/get_beatmaps?k=${config.osuV1}&since=${mapDate}`)).data
         if (maps.length === 0)
             break
 
