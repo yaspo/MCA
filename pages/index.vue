@@ -38,10 +38,7 @@ export default {
     },
     methods: {
         async run () {
-            let source = new EventSource(`/api/user/test/2019`)
-            source.onmessage = (event)  => {
-                this.value = event.data
-            }
+            console.log((await axios.get(`/api/user/test/2019`)).data)
         },
     },
 }
