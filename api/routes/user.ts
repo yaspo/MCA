@@ -8,7 +8,7 @@ const UserRouter = new Router();
 UserRouter.get("/", isLoggedIn, async (ctx) => {
     const user = await User.findOne({ relations: ["mca"], where: { id: ctx.state.user.id }})
     if (!user) {
-        ctx.body = { error: "No user found!" }
+        ctx.body = { error: "State user does not match any users in database!" }
         return 
     }
 
