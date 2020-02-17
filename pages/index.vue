@@ -1,18 +1,28 @@
 <template>
-    <div>
-        <a href="/api/login/discord" v-if="!user || user.discord.userID === ''">login discord</a>
-        <a href="/api/login/osu" v-if="(user && user.osu.userID === '')"> login osu!</a>
-        <div v-if="user">
-            Discord username: {{ user.discord.username }}<br>
-            osu! username: {{ user.osu.username }}<br>
-            <p v-if="eligible"> You are eligible </p>
-            <p v-else> You are not eligible </p>
-        </div>
-        {{ value }}
-        <div @click="run">
-            click to run
-        </div>
+  <div>
+    <a
+      v-if="!user || user.discord.userID === ''"
+      href="/api/login/discord"
+    >login discord</a>
+    <a
+      v-if="(user && user.osu.userID === '')"
+      href="/api/login/osu"
+    > login osu!</a>
+    <div v-if="user">
+      Discord username: {{ user.discord.username }}<br>
+      osu! username: {{ user.osu.username }}<br>
+      <p v-if="eligible">
+        You are eligible
+      </p>
+      <p v-else>
+        You are not eligible
+      </p>
     </div>
+    {{ value }}
+    <div @click="run">
+      click to run
+    </div>
+  </div>
 </template>
 
 <script>
@@ -29,6 +39,7 @@ export default {
     mounted: async function() {
         try {
             const data = (await axios.get(`/api/user`)).data;
+            console.log(data)
             
             if (!data.error) {
                 this.user = data.user;
