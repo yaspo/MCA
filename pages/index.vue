@@ -4,7 +4,9 @@
         <a href="/api/login/osu" v-if="(user && user.osu.userID === '')"> login osu!</a>
         <div v-if="user">
             Discord username: {{ user.discord.username }}<br>
-            osu! username: {{ user.osu.username }}
+            osu! username: {{ user.osu.username }}<br>
+            <p v-if="eligible"> You are eligible </p>
+            <p v-else> You are not eligible </p>
         </div>
         {{ value }}
         <div @click="run">
@@ -20,7 +22,8 @@ export default {
     data () {
         return {
             user: null,
-            value: "0%"
+            value: "0%",
+            eligible: false,
         }
     },
     mounted: async function() {
@@ -38,7 +41,7 @@ export default {
     },
     methods: {
         async run () {
-            console.log((await axios.get(`/api/user/test/2019`)).data)
+            console.log((await axios.post(`/api/user/guestDifficulty/2019/osu`)).data)
         },
     },
 }
