@@ -7,7 +7,7 @@
 	<a
 		v-if="(user && user.osu.userID === '')"
 		href="/api/login/osu"
-	> login osu!</a>
+	>login osu!</a>
 	<div v-if="user">
 		Discord username: {{ user.discord.username }}<br>
 		osu! username: {{ user.osu.username }}<br>
@@ -39,20 +39,24 @@ export default {
 	mounted: async function() {
 		try {
 			const data = (await axios.get(`/api/user`)).data;
-			console.log(data)
 
 			if (data.error) {
-				console.log(data.error)
+				alert(data.error)
 			} else {
 				this.user = data.user;
 			}
 		} catch (err) {
-			console.log(err);
+			console.error(err);
 		}
 	},
 	methods: {
 		async run () {
-			console.log((await axios.post(`/api/user/guestDifficulty/2019/osu`)).data)
+			const res = (await axios.post(`/api/user/guestDifficulty/2019`, {
+				url: "https://osu.ppy.sh/beatmapsets/809748#osu/1699094"
+			})).data
+			if (res.error) {
+				alert(res.error)
+			}
 		},
 	},
 }
