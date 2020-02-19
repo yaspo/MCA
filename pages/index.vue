@@ -44,6 +44,11 @@ export default {
 				alert(data.error)
 			} else {
 				this.user = data.user;
+				for (const eligibility of this.user.mca) {
+					if (eligibility.year === (new Date).getUTCFullYear) {
+						this.eligible = true
+					}
+				}
 			}
 		} catch (err) {
 			console.error(err);
@@ -55,7 +60,9 @@ export default {
 				url: "https://osu.ppy.sh/beatmapsets/809748#osu/1699094"
 			})).data
 			if (res.error) {
-				alert(res.error)
+				this.value = res.error
+			} else {
+				this.value = "Success!"
 			}
 		},
 	},
