@@ -3,8 +3,9 @@ import { isLoggedIn, hasRole } from "../../../../CorsaceServer/middleware";
 import { Category } from "../../../../CorsaceModels/MCA_AYIM/category";
 import { Beatmap } from "../../../../CorsaceModels/MCA_AYIM/beatmap";
 import { ModeDivision } from "../../../../CorsaceModels/MCA_AYIM/modeDivision";
+import { ParameterizedContext, Next } from "koa";
 
-async function validateBody(ctx, next): Promise<any> {
+async function validateBody(ctx: ParameterizedContext<any, Router.IRouterParamContext<any, {}>>, next: Next): Promise<any> {
     const name = ctx.request.body.name.trim();
 
     if (!name) {
