@@ -1,15 +1,118 @@
+<template>
+    <div>
+        <div class="header">
+            <img src="../../CorsaceAssets/img/ayim-mca/site/2019.png">
+            <a
+                class="mca_active"
+                href="#MCA"
+            >MAPPERS'S <br> CHOICE <br> AWARDS</a>
+            <a class="seperator"><img src="../../CorsaceAssets/img/ayim-mca/site/l.png"></a>
+            <a
+                class="ayim"
+                href="ayim.html"
+            >A YEAR <br> IN <br> MAPPING</a>
+            <a
+                class="login"
+                href="#login"
+            >LOG IN</a>
+        </div>
+
+        <div class="home">
+            <!---TODO: SETTLE ON A DESIGN AND REPLACE PLACEHOLDER--->
+            <div class="headings">
+                MCA HEADING
+            </div>
+	
+            <div class="date">
+                01/01/20 10PST - 01/13/20 10 PST
+            </div>
+
+            <!---TODO: STYLE TEXTBOX IF NEEDED--->
+            <div class="desc">
+                Mapper's Choice Awards is back for round 4 in 2019! This is a voting event where all mappers/modders can nominate and <br> 
+                vote what they think is the best map/mapper for each category. <br><br>
+
+                Our intention is to give a new perspective on the best maps of 2019 through the eyes of the mapping community! <br><br>
+
+                This year, we have separated storyboarding from the other modes to give them more emphasis, as well as going with a Google Form submission, <br>
+                making it as easy as possible for you to vote/nominate! <br><br>
+
+                We hope as many participants as possible take part in this event!
+            </div>
+	
+            <!---TODO: GET IMAGE ASSETS FOR MODE ICONS--->
+        </div>
+
+        <div class="footer">
+            <div class="corsace">
+                <div class="logo">
+                    <img src="../../CorsaceAssets/img/ayim-mca/site/corsace logo.png">
+                </div>
+                <div class="logo_text">
+                    <img src="../../CorsaceAssets/img/ayim-mca/site/corsace text.png">
+                </div>
+            </div>
+	
+            <div class="dot_seperator">
+                <div class="dot">
+                    <img src="../../CorsaceAssets/img/ayim-mca/site/d.png">
+                </div>
+            </div>
+
+            <div class="socials">
+                <a href="https://twitter.com/vinxis1"> <img src="../../CorsaceAssets/img/ayim-mca/site/twitter.png"> </a>
+                <a href="https://open.corsace.io/discord.94b52bb5.png"><img src="../../CorsaceAssets/img/ayim-mca/site/discord.png"></a>
+                <a href="https://open.corsace.io/twitch.6a390bfe.png"><img src="../../CorsaceAssets/img/ayim-mca/site/ttv.png"></a>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import axios from "axios";
+
+export default {
+    data () {
+        return {
+            user: null,
+            value: "0%",
+            eligible: false,
+        };
+    },
+    mounted: async function() {
+        try {
+            const data = (await axios.get(`/api/user`)).data;
+
+            if (data.error) {
+                alert(data.error);
+            } else {
+                this.user = data.user;
+                for (const eligibility of this.user.mca) {
+                    if (eligibility.year === (new Date).getUTCFullYear) {
+                        this.eligible = true;
+                    }
+                }
+            }
+        } catch (err) {
+            console.error(err);
+        }
+    },
+    methods: {
+        async run () {
+            const res = (await axios.post(`/api/user/guestDifficulty/2019`, {
+                url: "https://osu.ppy.sh/beatmapsets/809748#osu/1699094",
+            })).data;
+            if (res.error) {
+                this.value = res.error;
+            } else {
+                this.value = "Success!";
+            }
+        },
+    },
+};
+</script>
+
 <style>
-html {
-  height: 100%;
-}
-body {
-  margin:0;
-  min-height: 100%;
-  background-image: url("../../CorsaceAssets/img/ayim-mca/site/bg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 .header {
   display: flex;
   overflow: hidden;
@@ -19,7 +122,6 @@ body {
   align-items: center;
   top: 0;
   width: 100%;
-
 }
 
 .header a {
@@ -180,117 +282,3 @@ body {
 	height: 70px;
 }
 </style>
-
-<template>
-    <div>
-        <div class="header">
-            <img src="../../CorsaceAssets/img/ayim-mca/site/2019.png">
-            <a
-                class="mca_active"
-                href="#MCA"
-            >MAPPERS'S <br> CHOICE <br> AWARDS</a>
-            <a class="seperator"><img src="../../CorsaceAssets/img/ayim-mca/site/l.png"></a>
-            <a
-                class="ayim"
-                href="ayim.html"
-            >A YEAR <br> IN <br> MAPPING</a>
-            <a
-                class="login"
-                href="#login"
-            >LOG IN</a>
-        </div>
-
-        <div class="home">
-            <!---TODO: SETTLE ON A DESIGN AND REPLACE PLACEHOLDER--->
-            <div class="headings">
-                MCA HEADING
-            </div>
-	
-            <div class="date">
-                01/01/20 10PST - 01/13/20 10 PST
-            </div>
-
-            <!---TODO: STYLE TEXTBOX IF NEEDED--->
-            <div class="desc">
-                Mapper's Choice Awards is back for round 4 in 2019! This is a voting event where all mappers/modders can nominate and <br> 
-                vote what they think is the best map/mapper for each category. <br><br>
-
-                Our intention is to give a new perspective on the best maps of 2019 through the eyes of the mapping community! <br><br>
-
-                This year, we have separated storyboarding from the other modes to give them more emphasis, as well as going with a Google Form submission, <br>
-                making it as easy as possible for you to vote/nominate! <br><br>
-
-                We hope as many participants as possible take part in this event!
-            </div>
-	
-            <!---TODO: GET IMAGE ASSETS FOR MODE ICONS--->
-        </div>
-
-        <div class="footer">
-            <div class="corsace">
-                <div class="logo">
-                    <img src="../../CorsaceAssets/img/ayim-mca/site/corsace logo.png">
-                </div>
-                <div class="logo_text">
-                    <img src="../../CorsaceAssets/img/ayim-mca/site/corsace text.png">
-                </div>
-            </div>
-	
-            <div class="dot_seperator">
-                <div class="dot">
-                    <img src="../../CorsaceAssets/img/ayim-mca/site/d.png">
-                </div>
-            </div>
-
-            <div class="socials">
-                <a href="https://twitter.com/vinxis1"> <img src="../../CorsaceAssets/img/ayim-mca/site/twitter.png"> </a>
-                <a href="https://open.corsace.io/discord.94b52bb5.png"><img src="../../CorsaceAssets/img/ayim-mca/site/discord.png"></a>
-                <a href="https://open.corsace.io/twitch.6a390bfe.png"><img src="../../CorsaceAssets/img/ayim-mca/site/ttv.png"></a>
-            </div>
-        </div>
-    </div>
-</template>
-
-<script>
-import axios from "axios";
-
-export default {
-    data () {
-        return {
-            user: null,
-            value: "0%",
-            eligible: false,
-        };
-    },
-    mounted: async function() {
-        try {
-            const data = (await axios.get(`/api/user`)).data;
-
-            if (data.error) {
-                alert(data.error);
-            } else {
-                this.user = data.user;
-                for (const eligibility of this.user.mca) {
-                    if (eligibility.year === (new Date).getUTCFullYear) {
-                        this.eligible = true;
-                    }
-                }
-            }
-        } catch (err) {
-            console.error(err);
-        }
-    },
-    methods: {
-        async run () {
-            const res = (await axios.post(`/api/user/guestDifficulty/2019`, {
-                url: "https://osu.ppy.sh/beatmapsets/809748#osu/1699094",
-            })).data;
-            if (res.error) {
-                this.value = res.error;
-            } else {
-                this.value = "Success!";
-            }
-        },
-    },
-};
-</script>
