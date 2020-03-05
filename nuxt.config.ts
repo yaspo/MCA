@@ -33,10 +33,10 @@ export default {
             },
         ],
     ],
-	head: {
-    link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap' },
-	  { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lexend+Peta&display=swap' }
-    ]
-  }
+    head: {
+        link: [
+            { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Red+Hat+Display&display=swap" },
+            { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Lexend+Peta&display=swap" },
+        ],
+    },
 };
