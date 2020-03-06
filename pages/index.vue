@@ -20,7 +20,7 @@
         <div class="home">
             <!---TODO: SETTLE ON A DESIGN AND REPLACE PLACEHOLDER--->
             <div class="headings">
-                MCA HEADING
+                test
             </div>
 	
             <div class="date">
