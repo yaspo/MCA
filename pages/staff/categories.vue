@@ -119,7 +119,7 @@ interface Category {
     beatmapsets: object[];
 }
 
-export default {
+export default Vue.extend({
     data () {
         return {
             categories: [] as Category[],
@@ -200,5 +200,5 @@ export default {
             }
         },
     },
-};
+});
 </script>

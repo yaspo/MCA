@@ -28,10 +28,11 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 import axios from "axios";
+import Vue from "vue";
 
-export default {
+export default Vue.extend({
     props: {
         user: {
             type: Object,
@@ -58,7 +59,7 @@ export default {
             }
         },
     },
-};
+});
 </script>
 
 <style>
