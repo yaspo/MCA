@@ -2,16 +2,16 @@
     <div class="header">
         <img src="../../CorsaceAssets/img/ayim-mca/site/2019.png">
         <a
-            class="header_title--active"
+            class="header__title--active"
             href="#MCA"
         >MAPPERS'S <br> CHOICE <br> AWARDS</a>
-        <a class="header_seperator"><img src="../../CorsaceAssets/img/ayim-mca/site/l.png"></a>
+        <a class="header__seperator"><img src="../../CorsaceAssets/img/ayim-mca/site/l.png"></a>
         <a
-            class="header_title"
+            class="header__title"
             href="ayim.html"
         >A YEAR <br> IN <br> MAPPING</a>
         <a
-            class="header_login"
+            class="header__login"
             href="#login"
         >LOG IN</a>
     </div>
@@ -34,11 +34,11 @@
 	}
 }
 
-.header_seperator {
+.header__seperator {
 	margin-left: 20px;
 }
 
-.header_title {
+.header__title {
 	font-size: 25px;
 	line-height: 0.86;
 	letter-spacing: 10px;
@@ -46,7 +46,7 @@
 	margin-left: 3%;
 }
 
-.header_title--active {
+.header__title--active {
 	font-size: 25px;
 	line-height: 0.86;
 	letter-spacing: 10px;
@@ -54,7 +54,7 @@
 	margin-left: 3%;
 }
 
-.header_login {
+.header__login {
 	line-height: 1.19;
 	letter-spacing: 1.89px;
 	color: #d8d8d8;

@@ -1,23 +1,23 @@
 <template>
     <div class="footer">
-        <div class="footer_left">
-            <div class="footer_corsace">
+        <div class="footer__left">
+            <div class="footer__corsace">
                 <img
-                    class="footer_logo" 
+                    class="footer__logo" 
                     src="../../CorsaceAssets/img/ayim-mca/site/corsace logo.png"
                 >
                 <img
-                    class="footer_logoText" 
+                    class="footer__logoText" 
                     src="../../CorsaceAssets/img/ayim-mca/site/corsace text.png"
                 >
             </div>
 
             <img 
-                class="footer_dot" 
+                class="footer__dot" 
                 src="../../CorsaceAssets/img/ayim-mca/site/d.png"
             >
 
-            <div class="footer_socials">
+            <div class="footer__socials">
                 <a href="https://twitter.com/vinxis1"> <img src="../../CorsaceAssets/img/ayim-mca/site/twitter.png"> </a>
                 <a href="https://open.corsace.io/discord.94b52bb5.png"><img src="../../CorsaceAssets/img/ayim-mca/site/discord.png"></a>
                 <a href="https://open.corsace.io/twitch.6a390bfe.png"><img src="../../CorsaceAssets/img/ayim-mca/site/ttv.png"></a>
@@ -54,32 +54,32 @@ export default {
     align-items: center;
 }
 
-.footer_left {
+.footer__left {
     display: flex;
     height: 100%;
     align-items: center;
     padding-left: 1%;
 }
 
-.footer_corsace {
+.footer__corsace {
     display: flex;
     align-items: center;
 }
 
-.footer_logo {
+.footer__logo {
     height: 90px;
 }
 
-.footer_logoText {
+.footer__logoText {
     height: 40px;
 }
 
-.footer_dot {
+.footer__dot {
     height: 5px;
     padding: 0 4%;
 }
 
-.footer_socials {
+.footer__socials {
     display: flex;
     img {
         height: 70px;

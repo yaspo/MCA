@@ -1,20 +1,20 @@
 <template>
     <div class="locale">
         <div 
-            class="locale_current" 
+            class="locale__current" 
             @click="change = !change"
         >
             <img 
                 :src="$t('flag')"
-                class="locale_flag"
+                class="locale__flag"
             >
-            <div class="locale_text">
+            <div class="locale__text">
                 {{ $i18n.locale.toUpperCase() }}
             </div>
         </div>
         <div 
             v-if="change"
-            class="locale_selector"
+            class="locale__selector"
         >
             test
         </div>
@@ -39,7 +39,7 @@ export default Vue.extend({
     padding-right: 1%;
 }
 
-.locale_current {
+.locale__current {
     display: flex;
     height: 100%;
     align-items: center;
@@ -47,16 +47,16 @@ export default Vue.extend({
     cursor: pointer;
 }
 
-.locale_flag {
+.locale__flag {
     height: 25px;
     padding-right: 10px;
 }
 
-.locale_text {
+.locale__text {
     font-size: 20px;
 }
 
-.locale_selector {
+.locale__selector {
 
 }
 </style>

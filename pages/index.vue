@@ -2,16 +2,16 @@
     <div>
         <div class="home">
             <!---TODO: SETTLE ON A DESIGN AND REPLACE PLACEHOLDER--->
-            <div class="home_headings">
+            <div class="home__headings">
                 test
             </div>
 	
-            <div class="home_date">
+            <div class="home__date">
                 01/01/20 10PST - 01/13/20 10 PST
             </div>
 
             <!---TODO: STYLE TEXTBOX IF NEEDED--->
-            <div class="home_description">
+            <div class="home__description">
                 Mapper's Choice Awards is back for round 4 in 2019! This is a voting event where all mappers/modders can nominate and <br> 
                 vote what they think is the best map/mapper for each category. <br><br>
 
@@ -75,18 +75,18 @@ export default Vue.extend({
 
 /*TODO: MAKE FONT RESPONSIVE THIS IS JUST FOR TESTING */
 
-.home_headings {
+.home__headings {
 	margin-top: 5%;
 	font-family: 'Lexend Peta', bold;
 	font-size: 4vw;
 }
 
-.home_date {
+.home__date {
 	font-size: 1vw;
 	margin-bottom: 5%;
 }
 
-.home_description {
+.home__description {
 	font-size: 1vw;
 }
 </style>
