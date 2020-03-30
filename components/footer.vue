@@ -1,23 +1,23 @@
 <template>
     <div class="footer">
-        <div class="footer-left">
-            <div class="corsace">
+        <div class="footer_left">
+            <div class="footer_corsace">
                 <img
-                    class="logo" 
+                    class="footer_logo" 
                     src="../../CorsaceAssets/img/ayim-mca/site/corsace logo.png"
                 >
                 <img
-                    class="logo_text" 
+                    class="footer_logoText" 
                     src="../../CorsaceAssets/img/ayim-mca/site/corsace text.png"
                 >
             </div>
 
             <img 
-                class="dot" 
+                class="footer_dot" 
                 src="../../CorsaceAssets/img/ayim-mca/site/d.png"
             >
 
-            <div class="socials">
+            <div class="footer_socials">
                 <a href="https://twitter.com/vinxis1"> <img src="../../CorsaceAssets/img/ayim-mca/site/twitter.png"> </a>
                 <a href="https://open.corsace.io/discord.94b52bb5.png"><img src="../../CorsaceAssets/img/ayim-mca/site/discord.png"></a>
                 <a href="https://open.corsace.io/twitch.6a390bfe.png"><img src="../../CorsaceAssets/img/ayim-mca/site/ttv.png"></a>
@@ -38,7 +38,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .footer {
     overflow: hidden;
     background-color: #000;
@@ -54,43 +54,35 @@ export default {
     align-items: center;
 }
 
-.footer-left {
+.footer_left {
     display: flex;
     height: 100%;
     align-items: center;
     padding-left: 1%;
 }
 
-.corsace {
+.footer_corsace {
     display: flex;
     align-items: center;
 }
 
-.logo {
+.footer_logo {
     height: 90px;
 }
 
-.logo_text {
+.footer_logoText {
     height: 40px;
 }
 
-.dot_seperator {
-    position: relative;
-    top: 45%;
-    -ms-transform: translateY(-45%);
-    transform: translateY(-45%);
-}
-
-.dot {
+.footer_dot {
     height: 5px;
     padding: 0 4%;
 }
 
-.socials {
+.footer_socials {
     display: flex;
-}
-
-.socials img {
-    height: 70px;
+    img {
+        height: 70px;
+    }
 }
 </style>

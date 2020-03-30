@@ -33,7 +33,7 @@ export default Vue.extend({
 });
 </script>
 
-<style>
+<style lang="scss">
 .locale {
     color: #cccccc;
     padding-right: 1%;
@@ -57,6 +57,6 @@ export default Vue.extend({
 }
 
 .locale_selector {
-    
+
 }
 </style>
