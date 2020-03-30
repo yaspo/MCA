@@ -1,107 +1,96 @@
 <template>
     <div class="footer">
-        <div class="corsace">
-            <div class="logo">
-                <img src="../../CorsaceAssets/img/ayim-mca/site/corsace logo.png">
+        <div class="footer-left">
+            <div class="corsace">
+                <img
+                    class="logo" 
+                    src="../../CorsaceAssets/img/ayim-mca/site/corsace logo.png"
+                >
+                <img
+                    class="logo_text" 
+                    src="../../CorsaceAssets/img/ayim-mca/site/corsace text.png"
+                >
             </div>
-            <div class="logo_text">
-                <img src="../../CorsaceAssets/img/ayim-mca/site/corsace text.png">
+
+            <img 
+                class="dot" 
+                src="../../CorsaceAssets/img/ayim-mca/site/d.png"
+            >
+
+            <div class="socials">
+                <a href="https://twitter.com/vinxis1"> <img src="../../CorsaceAssets/img/ayim-mca/site/twitter.png"> </a>
+                <a href="https://open.corsace.io/discord.94b52bb5.png"><img src="../../CorsaceAssets/img/ayim-mca/site/discord.png"></a>
+                <a href="https://open.corsace.io/twitch.6a390bfe.png"><img src="../../CorsaceAssets/img/ayim-mca/site/ttv.png"></a>
             </div>
         </div>
 
-        <div class="dot_seperator">
-            <div class="dot">
-                <img src="../../CorsaceAssets/img/ayim-mca/site/d.png">
-            </div>
-        </div>
-
-        <div class="socials">
-            <a href="https://twitter.com/vinxis1"> <img src="../../CorsaceAssets/img/ayim-mca/site/twitter.png"> </a>
-            <a href="https://open.corsace.io/discord.94b52bb5.png"><img src="../../CorsaceAssets/img/ayim-mca/site/discord.png"></a>
-            <a href="https://open.corsace.io/twitch.6a390bfe.png"><img src="../../CorsaceAssets/img/ayim-mca/site/ttv.png"></a>
-        </div>
+        <languageSwitch />
     </div>
 </template>
 
 <script>
+import languageSwitch from "./languageSwitch";
+
 export default {
-    
+    components: {
+        "languageSwitch": languageSwitch,
+    },
 };
 </script>
 
 <style>
 .footer {
-  overflow: hidden;
-  background-color: #000;
-  border-top-style: solid;
-  border-top-color: #FFF;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 9%;
+    overflow: hidden;
+    background-color: #000;
+    border-top-style: solid;
+    border-top-color: #FFF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 9%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: center;
 }
+
+.footer-left {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding-left: 1%;
+}
+
 .corsace {
-  margin-left: 1%;
-  position: relative;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+    display: flex;
+    align-items: center;
 }
 
 .logo {
-  float: left;
-  display: block;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);;
-}
-
-.logo img {
-	height: 90px;
+    height: 90px;
 }
 
 .logo_text {
-  float: left;
-  display: block;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.logo_text img {
-	height: 40px;
+    height: 40px;
 }
 
 .dot_seperator {
-  position: relative;
-  top: 45%;
-  -ms-transform: translateY(-45%);
-  transform: translateY(-45%);
+    position: relative;
+    top: 45%;
+    -ms-transform: translateY(-45%);
+    transform: translateY(-45%);
 }
 
-.dot{
-	margin-left: 2%;
-  float: left;
-  display: block;
-  top: 45%;
-  -ms-transform: translateY(-45%);
-  transform: translateY(-45%);
-}
-
-.dot img {
-	height: 5px;
+.dot {
+    height: 5px;
+    padding: 0 4%;
 }
 
 .socials {
-  margin-left: 10%;
-  position: relative;
-  left: 2%;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+    display: flex;
 }
 
 .socials img {
-	height: 70px;
+    height: 70px;
 }
 </style>

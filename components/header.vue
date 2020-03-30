@@ -17,29 +17,22 @@
     </div>
 </template>
 
-<script>
-export default {
-    
-};
-</script>
-
 <style>
 .header {
-  display: flex;
-  overflow: hidden;
-  background-color: #000;
-  border-bottom-style: solid;
-  border-bottom-color: #FFF;
-  align-items: center;
-  top: 0;
-  width: 100%;
+	display: flex;
+	overflow: hidden;
+	background-color: #000;
+	border-bottom-style: solid;
+	border-bottom-color: #FFF;
+	align-items: center;
+	top: 0;
+	width: 100%;
 }
 
 .header a {
-  float: left;
-  text-decoration: none;
-  font-family: 'Red Hat Display', sans-serif;
-  position: relative;
+	float: left;
+	text-decoration: none;
+	position: relative;
 }
 
 .seperator {
@@ -48,43 +41,41 @@ export default {
 
 
 .mca_active {
-  font-size: 25px;
-  line-height: 0.86;
-  letter-spacing: 10px;
-  color: #fff;
-  margin-left: 3%;
-
+	font-size: 25px;
+	line-height: 0.86;
+	letter-spacing: 10px;
+	color: #fff;
+	margin-left: 3%;
 }
 
 .mca {
-  font-size: 25px;
-  line-height: 0.86;
-  letter-spacing: 10px;
-  color: #4c4c4c;
-  margin-left: 3%;
+	font-size: 25px;
+	line-height: 0.86;
+	letter-spacing: 10px;
+	color: #4c4c4c;
+	margin-left: 3%;
 }
 
 .ayim_active {
-  font-size: 25px;
-  line-height: 0.86;
-  letter-spacing: 10px;
-  color: #fff;
-  margin-left: 3%;
-
+	font-size: 25px;
+	line-height: 0.86;
+	letter-spacing: 10px;
+	color: #fff;
+	margin-left: 3%;
 }
 
 .ayim {
-  font-size: 25px;
-  line-height: 0.86;
-  letter-spacing: 10px;
-  color: #4c4c4c;
-  margin-left: 3%;
+	font-size: 25px;
+	line-height: 0.86;
+	letter-spacing: 10px;
+	color: #4c4c4c;
+	margin-left: 3%;
 }
 
 .login {
-  line-height: 1.19;
-  letter-spacing: 1.89px;
-  color: #d8d8d8;
-  margin-left: 40%;
+	line-height: 1.19;
+	letter-spacing: 1.89px;
+	color: #d8d8d8;
+	margin-left: 40%;
 }
 </style>

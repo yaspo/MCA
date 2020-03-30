@@ -77,12 +77,10 @@ export default Vue.extend({
 /*TODO: MAKE FONT RESPONSIVE THIS IS JUST FOR TESTING */
 
 .desc {
-	font-family: 'Red Hat Display', sans-serif;
 	font-size: 1vw;
 }
 
 .date {
-	font-family: 'Red Hat Display', sans-serif;
 	font-size: 1vw;
 	margin-bottom: 5%;
 }
