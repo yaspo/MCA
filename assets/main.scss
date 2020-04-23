@@ -1,3 +1,20 @@
+@font-face {
+    font-family: Scoreboard;
+    src: url("../../CorsaceAssets/fonts/scoreboard.ttf");
+}
+
+:root {
+    --standard: #fb2475;
+    --taiko: #ff890a;
+    --fruits: #0abdff;
+    --mania: #48f326;
+    --storyboard: #919191;
+}
+
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
 html {
     font-family: 'Red Hat Display', sans-serif;
     height: 100%;
@@ -10,4 +27,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Red Hat Display', sans-serif;
+    color: white;
+	font-size: 1rem;
 }

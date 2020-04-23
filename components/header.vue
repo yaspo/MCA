@@ -26,7 +26,9 @@
 	border-bottom-color: #FFF;
 	align-items: center;
 	top: 0;
-	width: 100%;
+    width: 100%;
+    flex: 0 0 auto;
+
 	a {
 		float: left;
 		text-decoration: none;
