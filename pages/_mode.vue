@@ -9,10 +9,10 @@
 
                     <div class="voting-date__content">
                         <div class="voting-date__title">
-                            <b>voting stage</b>
+                            <b>{{ $t('mca.main.stage.nominating') }}</b>
                         </div>
                         <div class="voting-date__subtitle">
-                            days left
+                            {{ $t('mca.main.daysLeft') }}
                         </div>
                     </div>
                 </div>
@@ -21,32 +21,19 @@
             <div class="general-info">
                 <p>01/01/20 10PST - 01/13/20 10PST</p>
 
-                <p>
-                    Mapper's Choice Awards is back for round 4 in 2019! This is a voting event 
-                    where all mappers/modders can nominate and vote what they think is the 
-                    best map/mapper for each category. 
-                </p>
+                <p>{{ $t('mca.main.message.1') }}</p>
 
-                <p>
-                    Our intention is to give a new perspective on the best maps of 2019 
-                    through the eyes of the mapping community!
-                </p>
+                <p>{{ $t('mca.main.message.2') }}</p>
                                 
-                <p>
-                    This year, we have separated storyboarding from the other modes to give 
-                    them more emphasis, as well as going with a Google Form submission, 
-                    making it as easy as possible for you to vote/nominate! 
-                </p>
+                <p>{{ $t('mca.main.message.3') }}</p>
                                 
-                <p>
-                    We hope as many participants as possible take part in this event!
-                </p>
+                <p>{{ $t('mca.main.message.4') }}</p>
             </div>
         </div>
 
         <div class="right-side">
             <div class="mode-title">
-                standard | voting
+                {{ selectedMode }} | {{ $t('mca.main.nominating') }}
             </div>
 
             <div
@@ -55,7 +42,7 @@
             >
                 <div class="mode-container__general">
                     <div class="ranked-sets">
-                        <small>RANKED SETS</small>
+                        <small>{{ $t('mca.main.rankedSets') }}</small>
                         <div class="ranked-sets__divider" />
                         <div class="ranked-sets__content">
                             0000000
@@ -66,18 +53,18 @@
                         class="vote-now"
                         :class="`vote-now--${selectedMode}`"
                     >
-                        vote now ! <span>>></span>
+                        {{ $t('mca.main.voteNow') }} <span>>></span>
                     </div>
                 </div>
 
                 <div class="categories">
                     <div
-                        v-for="i in 3"
+                        v-for="i in 2"
                         :key="i"
                         class="categories__list"
                     >
                         <div class="categories__category-title">
-                            map categories
+                            {{ $t('mca.main.categories.map') }}
                         </div>
                         <div class="categories__category-award">
                             grand award
@@ -102,7 +89,7 @@
                     
                 <div class="organizers">
                     <div class="organizers__title">
-                        <small>ORGANIZED BY</small>
+                        <small>{{ $t('mca.main.organized') }}</small>
                     </div>
                     <div class="organizers__content">
                         person a, person b, person c, person d, person e
