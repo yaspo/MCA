@@ -327,6 +327,14 @@ $modes: "storyboard", "mania" , "fruits", "taiko", "standard";
             flex-wrap: nowrap;
         }
     }
+
+    &__stats {
+        margin-bottom: 20px;
+
+        @media (min-width: 1200px) {
+            flex-wrap: nowrap;
+        }
+    }
 }
 
 .categories {
