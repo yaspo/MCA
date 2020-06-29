@@ -4,23 +4,23 @@
             <div class="footer__corsace">
                 <img
                     class="footer__logo" 
-                    src="../../CorsaceAssets/img/ayim-mca/site/corsace logo.png"
+                    src="../../../CorsaceAssets/img/ayim-mca/site/corsace logo.png"
                 >
                 <img
                     class="footer__logoText" 
-                    src="../../CorsaceAssets/img/ayim-mca/site/corsace text.png"
+                    src="../../../CorsaceAssets/img/ayim-mca/site/corsace text.png"
                 >
             </div>
 
             <img 
                 class="footer__dot" 
-                src="../../CorsaceAssets/img/ayim-mca/site/d.png"
+                src="../../../CorsaceAssets/img/ayim-mca/site/d.png"
             >
 
             <div class="footer__socials">
-                <a href="https://twitter.com/vinxis1"> <img src="../../CorsaceAssets/img/ayim-mca/site/twitter.png"> </a>
-                <a href="https://open.corsace.io/discord.94b52bb5.png"><img src="../../CorsaceAssets/img/ayim-mca/site/discord.png"></a>
-                <a href="https://open.corsace.io/twitch.6a390bfe.png"><img src="../../CorsaceAssets/img/ayim-mca/site/ttv.png"></a>
+                <a href="https://twitter.com/vinxis1"> <img src="../../../CorsaceAssets/img/ayim-mca/site/twitter.png"> </a>
+                <a href="https://open.corsace.io/discord.94b52bb5.png"><img src="../../../CorsaceAssets/img/ayim-mca/site/discord.png"></a>
+                <a href="https://open.corsace.io/twitch.6a390bfe.png"><img src="../../../CorsaceAssets/img/ayim-mca/site/ttv.png"></a>
             </div>
         </div>
 

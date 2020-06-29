@@ -1,6 +1,8 @@
 <template>
     <div>
-        <headerComponent />
+        <headerComponent 
+            :user="user"
+        />
         <nuxt 
             :user="user" 
             :eligible="eligible"
@@ -12,8 +14,8 @@
 <script>
 import axios from "axios";
 
-import header from "../components/header";
-import footer from "../components/footer";
+import header from "../components/header/header";
+import footer from "../components/footer/footer";
 
 export default {
     components: {
@@ -30,9 +32,7 @@ export default {
         try {
             const data = (await axios.get(`/api/user`)).data;
 
-            if (data.error) {
-                alert(data.error);
-            } else {
+            if (!data.error) {
                 this.user = data.user;
                 for (const eligibility of this.user.mca) {
                     if (eligibility.year === (new Date).getUTCFullYear) {
