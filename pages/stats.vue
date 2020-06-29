@@ -1,23 +1,39 @@
 <template>
     <div class="home">
         <div class="full-size">
-            <div style="display: flex"><!--idk maybe replace with style?-->
+            <div style="display: flex">
+                <!--idk maybe replace with style?-->
                 <div class="category-buttons-group">
-                    <div class="category-buttons__active"> {{ $t('mca.main.mapsetsLabel') }} </div>
-                    <div class="category-buttons"> {{ $t('mca.main.mappersLabel') }} </div>
-                    <div class="category-buttons"> {{ $t('mca.main.commentsLabel') }} </div>
+                    <div class="category-buttons__active">
+                        {{ $t('mca.main.mapsetsLabel') }}
+                    </div>
+                    <div class="category-buttons">
+                        {{ $t('mca.main.mappersLabel') }}
+                    </div>
+                    <div class="category-buttons">
+                        {{ $t('mca.main.commentsLabel') }}
+                    </div>
                 </div>
                 <div class="mode-title-marginfix">
                     {{ selectedMode }} | {{ ('ayim') }}
                 </div>
             </div>
-            <div class="mode-container" :class="`mode-container--${selectedMode}`">
+            <div
+                class="mode-container"
+                :class="`mode-container--${selectedMode}`"
+            >
                 <div class="mode-container__stats">
                     <div class="stat-labels">
-                        <div class="stat-labels__label_main"> {{ $t('mca.main.mapsetsLabel') }} </div>
-                        <div class="divider"></div>
-                        <div class="stat-labels__label"> {{ $t('mca.main.recordsLabel') }} </div>
-                        <div class="stat-labels__label_active"> {{ $t('mca.main.statisticsLabel') }} </div>
+                        <div class="stat-labels__label_main">
+                            {{ $t('mca.main.mapsetsLabel') }}
+                        </div>
+                        <div class="divider" />
+                        <div class="stat-labels__label">
+                            {{ $t('mca.main.recordsLabel') }}
+                        </div>
+                        <div class="stat-labels__label_active">
+                            {{ $t('mca.main.statisticsLabel') }}
+                        </div>
                     </div>
                 </div>
                 <div class="stat-content">
@@ -26,15 +42,17 @@
                         <div class="stat-categories-group">
                             <!-- single header -->
                             <div
-                            class="stat-category"
-                            :class="`stat-category--${selectedMode}`"
+                                class="stat-category"
+                                :class="`stat-category--${selectedMode}`"
                             >
                                 <div class="stat-ff-icon-group">
-                                    <div class="stat-ff-icon"
-                                    :class="`stat-ff-icon--${selectedMode}`"
+                                    <div
+                                        class="stat-ff-icon"
+                                        :class="`stat-ff-icon--${selectedMode}`"
                                     />
-                                    <div class="stat-ff-icon"
-                                    :class="`stat-ff-icon--${selectedMode}`"
+                                    <div
+                                        class="stat-ff-icon"
+                                        :class="`stat-ff-icon--${selectedMode}`"
                                     />
                                 </div>
                                 <div class="stat-category-text">
@@ -44,31 +62,37 @@
                             <!-- close single header -->
                             <!-- start banner -->
                             <div
-                            class="stat-map-banner"
-                            :class="`stat-map-banner--${selectedMode}`"
+                                class="stat-map-banner"
+                                :class="`stat-map-banner--${selectedMode}`"
                             >
-                            <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">9</div>
+                                <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">
+                                    9
+                                </div>
                             </div>
                             <!-- close banner -->
                             <!-- start banner -->
                             <div
-                            class="stat-map-banner"
-                            :class="`stat-map-banner--${selectedMode}`"
+                                class="stat-map-banner"
+                                :class="`stat-map-banner--${selectedMode}`"
                             >
-                            <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">9</div>
+                                <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">
+                                    9
+                                </div>
                             </div>
                             <!-- close banner -->
                             <!-- single header -->
                             <div
-                            class="stat-category"
-                            :class="`stat-category--${selectedMode}`"
+                                class="stat-category"
+                                :class="`stat-category--${selectedMode}`"
                             >
                                 <div class="stat-ff-icon-group">
-                                    <div class="stat-ff-icon"
-                                    :class="`stat-ff-icon--${selectedMode}`"
+                                    <div
+                                        class="stat-ff-icon"
+                                        :class="`stat-ff-icon--${selectedMode}`"
                                     />
-                                    <div class="stat-ff-icon"
-                                    :class="`stat-ff-icon--${selectedMode}`"
+                                    <div
+                                        class="stat-ff-icon"
+                                        :class="`stat-ff-icon--${selectedMode}`"
                                     />
                                 </div>
                                 <div class="stat-category-text">
@@ -78,18 +102,22 @@
                             <!-- close single header -->
                             <!-- start banner -->
                             <div
-                            class="stat-map-banner"
-                            :class="`stat-map-banner--${selectedMode}`"
+                                class="stat-map-banner"
+                                :class="`stat-map-banner--${selectedMode}`"
                             >
-                            <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">9</div>
+                                <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">
+                                    9
+                                </div>
                             </div>
                             <!-- close banner -->
                             <!-- start banner -->
                             <div
-                            class="stat-map-banner"
-                            :class="`stat-map-banner--${selectedMode}`"
+                                class="stat-map-banner"
+                                :class="`stat-map-banner--${selectedMode}`"
                             >
-                            <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">9</div>
+                                <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">
+                                    9
+                                </div>
                             </div>
                             <!-- close banner -->
                         </div>
@@ -98,15 +126,17 @@
                         <div class="stat-categories-group">
                             <!-- single header -->
                             <div
-                            class="stat-category"
-                            :class="`stat-category--${selectedMode}`"
+                                class="stat-category"
+                                :class="`stat-category--${selectedMode}`"
                             >
                                 <div class="stat-ff-icon-group">
-                                    <div class="stat-ff-icon"
-                                    :class="`stat-ff-icon--${selectedMode}`"
+                                    <div
+                                        class="stat-ff-icon"
+                                        :class="`stat-ff-icon--${selectedMode}`"
                                     />
-                                    <div class="stat-ff-icon"
-                                    :class="`stat-ff-icon--${selectedMode}`"
+                                    <div
+                                        class="stat-ff-icon"
+                                        :class="`stat-ff-icon--${selectedMode}`"
                                     />
                                 </div>
                                 <div class="stat-category-text">
@@ -116,31 +146,37 @@
                             <!-- close single header -->
                             <!-- start banner -->
                             <div
-                            class="stat-map-banner"
-                            :class="`stat-map-banner--${selectedMode}`"
+                                class="stat-map-banner"
+                                :class="`stat-map-banner--${selectedMode}`"
                             >
-                            <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">9</div>
+                                <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">
+                                    9
+                                </div>
                             </div>
                             <!-- close banner -->
                             <!-- start banner -->
                             <div
-                            class="stat-map-banner"
-                            :class="`stat-map-banner--${selectedMode}`"
+                                class="stat-map-banner"
+                                :class="`stat-map-banner--${selectedMode}`"
                             >
-                            <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">9</div>
+                                <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">
+                                    9
+                                </div>
                             </div>
                             <!-- close banner -->
                             <!-- single header -->
                             <div
-                            class="stat-category"
-                            :class="`stat-category--${selectedMode}`"
+                                class="stat-category"
+                                :class="`stat-category--${selectedMode}`"
                             >
                                 <div class="stat-ff-icon-group">
-                                    <div class="stat-ff-icon"
-                                    :class="`stat-ff-icon--${selectedMode}`"
+                                    <div
+                                        class="stat-ff-icon"
+                                        :class="`stat-ff-icon--${selectedMode}`"
                                     />
-                                    <div class="stat-ff-icon"
-                                    :class="`stat-ff-icon--${selectedMode}`"
+                                    <div
+                                        class="stat-ff-icon"
+                                        :class="`stat-ff-icon--${selectedMode}`"
                                     />
                                 </div>
                                 <div class="stat-category-text">
@@ -150,18 +186,22 @@
                             <!-- close single header -->
                             <!-- start banner -->
                             <div
-                            class="stat-map-banner"
-                            :class="`stat-map-banner--${selectedMode}`"
+                                class="stat-map-banner"
+                                :class="`stat-map-banner--${selectedMode}`"
                             >
-                            <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">9</div>
+                                <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">
+                                    9
+                                </div>
                             </div>
                             <!-- close banner -->
                             <!-- start banner -->
                             <div
-                            class="stat-map-banner"
-                            :class="`stat-map-banner--${selectedMode}`"
+                                class="stat-map-banner"
+                                :class="`stat-map-banner--${selectedMode}`"
                             >
-                            <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">9</div>
+                                <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">
+                                    9
+                                </div>
                             </div>
                             <!-- close banner -->
                         </div>
@@ -170,15 +210,17 @@
                         <div class="stat-categories-group">
                             <!-- single header -->
                             <div
-                            class="stat-category"
-                            :class="`stat-category--${selectedMode}`"
+                                class="stat-category"
+                                :class="`stat-category--${selectedMode}`"
                             >
                                 <div class="stat-ff-icon-group">
-                                    <div class="stat-ff-icon"
-                                    :class="`stat-ff-icon--${selectedMode}`"
+                                    <div
+                                        class="stat-ff-icon"
+                                        :class="`stat-ff-icon--${selectedMode}`"
                                     />
-                                    <div class="stat-ff-icon"
-                                    :class="`stat-ff-icon--${selectedMode}`"
+                                    <div
+                                        class="stat-ff-icon"
+                                        :class="`stat-ff-icon--${selectedMode}`"
                                     />
                                 </div>
                                 <div class="stat-category-text">
@@ -188,31 +230,37 @@
                             <!-- close single header -->
                             <!-- start banner -->
                             <div
-                            class="stat-map-banner"
-                            :class="`stat-map-banner--${selectedMode}`"
+                                class="stat-map-banner"
+                                :class="`stat-map-banner--${selectedMode}`"
                             >
-                            <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">9</div>
+                                <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">
+                                    9
+                                </div>
                             </div>
                             <!-- close banner -->
                             <!-- start banner -->
                             <div
-                            class="stat-map-banner"
-                            :class="`stat-map-banner--${selectedMode}`"
+                                class="stat-map-banner"
+                                :class="`stat-map-banner--${selectedMode}`"
                             >
-                            <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">9</div>
+                                <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">
+                                    9
+                                </div>
                             </div>
                             <!-- close banner -->
                             <!-- single header -->
                             <div
-                            class="stat-category"
-                            :class="`stat-category--${selectedMode}`"
+                                class="stat-category"
+                                :class="`stat-category--${selectedMode}`"
                             >
                                 <div class="stat-ff-icon-group">
-                                    <div class="stat-ff-icon"
-                                    :class="`stat-ff-icon--${selectedMode}`"
+                                    <div
+                                        class="stat-ff-icon"
+                                        :class="`stat-ff-icon--${selectedMode}`"
                                     />
-                                    <div class="stat-ff-icon"
-                                    :class="`stat-ff-icon--${selectedMode}`"
+                                    <div
+                                        class="stat-ff-icon"
+                                        :class="`stat-ff-icon--${selectedMode}`"
                                     />
                                 </div>
                                 <div class="stat-category-text">
@@ -222,25 +270,32 @@
                             <!-- close single header -->
                             <!-- start banner -->
                             <div
-                            class="stat-map-banner"
-                            :class="`stat-map-banner--${selectedMode}`"
+                                class="stat-map-banner"
+                                :class="`stat-map-banner--${selectedMode}`"
                             >
-                            <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">9</div>
+                                <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">
+                                    9
+                                </div>
                             </div>
                             <!-- close banner -->
                             <!-- start banner -->
                             <div
-                            class="stat-map-banner"
-                            :class="`stat-map-banner--${selectedMode}`"
+                                class="stat-map-banner"
+                                :class="`stat-map-banner--${selectedMode}`"
                             >
-                            <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">9</div>
+                                <div>number of maps with <br> <b>AR10</b> <br><br></div> <div class="stat-count">
+                                    9
+                                </div>
                             </div>
                             <!-- close banner -->
                         </div>
                         <!-- end of group -->
                     </div>
                 </div>
-                <div class="mode-selection" :class="`mode-selection--${selectedMode}`">
+                <div
+                    class="mode-selection"
+                    :class="`mode-selection--${selectedMode}`"
+                >
                     <nuxt-link
                         v-for="mode in modes"
                         :key="mode"                        
