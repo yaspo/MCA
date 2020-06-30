@@ -19,7 +19,7 @@
             v-else
             class="header__login"
         >
-            <div class="header__login--text">
+            <div class="header__login--text header__login--flex">
                 <div class="header__login--gray">
                     welcome back
                 </div>
@@ -27,12 +27,19 @@
                     {{ user.osu.username }}
                 </div>
             </div>
-            <div class="header__login--profile">
+            <div 
+                :class="{'header__login--active': logout}"
+                class="header__login--profile header__login--flex" 
+                @click="logout=!logout"
+            >
                 <img 
-                    :src="user.osu.avatar"
+                    :src="avatarURL"
                     class="header__login--image"
                 >
-                <div class="triangle" />
+                <div 
+                    :class="{'triangle--active': logout}"
+                    class="triangle" 
+                />
             </div>
         </div>
 
@@ -40,6 +47,13 @@
             v-if="login"
             @close="login=false"
         />
+        <div 
+            v-else-if="logout"
+            class="header__logout"
+            @click="logout=!logout"
+        >
+            test
+        </div>
     </div>
 </template>
 
@@ -61,7 +75,13 @@ export default {
     data () {
         return {
             login: false,
+            logout: false,
         };
+    },
+    computed:  {
+        avatarURL: function()  {
+            return this.user && this.user.osu ? this.user.osu.avatar + "?" + Math.round(Math.random()*1000000) : "";
+        },
     },
 };
 </script>
@@ -69,18 +89,18 @@ export default {
 <style lang="scss">
 .header {
 	display: flex;
-	overflow: hidden;
 	background-color: #000;
 	border-bottom-style: solid;
 	border-bottom-color: #FFF;
 	align-items: center;
     width: 100%;
     flex: 0 0 auto;
+	padding: 0 20px;
+	position: relative;
 
 	a {
 		float: left;
 		text-decoration: none;
-		position: relative;
 	}
 }
 
@@ -107,16 +127,33 @@ export default {
 .header__login {
 	display: flex;
 	text-align: right;
+	font-size: 1.25rem;
 	line-height: 1.19;
 	letter-spacing: 1.89px;
 	color: #d8d8d8;
-	margin-left: 35%;
 	cursor: pointer;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: flex-end;
+	margin-left: 34%;
+	height: 100%;
+
+	&--active {
+		background-color: white;
+		border-radius: 20% 20% 0 0;
+	}
+
+	&--text {
+		cursor: initial;
+		padding-right: 10px;
+	}
 
 	&--gray {
+		font-size: 1rem;
 		color: #6f6f6f;
+	}
+
+	&--flex {
+		flex: 1;
 	}
 
 	&--profile {
@@ -127,7 +164,13 @@ export default {
 
 	&--image {
 		border-radius: 50%;
-		width: 35%;
+		width: 50%;
 	}
+}
+
+.header__logout {
+	position: absolute;
+	right: 0;
+	bottom: -15%;
 }
 </style>
