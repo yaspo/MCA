@@ -40,7 +40,7 @@ export default {
 
 <style lang="scss">
 .footer {
-    overflow: hidden;
+    overflow: visible;
     background-color: #000;
     border-top-style: solid;
     border-top-color: #FFF;
@@ -56,9 +56,11 @@ export default {
 
 .footer__left {
     display: flex;
-    height: 100%;
     align-items: center;
+    height: 100%;
     padding-left: 1%;
+    flex-grow: 1;
+    overflow: hidden;
 }
 
 .footer__corsace {

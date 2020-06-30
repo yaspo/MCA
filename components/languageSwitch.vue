@@ -1,6 +1,29 @@
 <template>
     <div class="locale">
         <div 
+            v-if="change"
+            class="locale__selector"
+        >
+            <div class="options">
+                <div class="locale__option"
+                    v-for="locale in availableLocales"
+                    :key="locale.code"
+
+                    @click="switchLocale(locale.code)"
+                >
+                <img  
+                        :src="getFlagUrl(locale.code)" 
+                        class="locale__flag" 
+                    >
+                    <div class="locale__text">
+                        {{ locale.code.toUpperCase() }}
+                    </div>
+                </div>
+           </div>
+           <div class="backdrop"></div>
+        </div>
+        
+        <div 
             class="locale__current" 
             @click="change = !change"
         >
@@ -12,17 +35,14 @@
                 {{ $i18n.locale.toUpperCase() }}
             </div>
         </div>
-        <div 
-            v-if="change"
-            class="locale__selector"
-        >
-            test
-        </div>
+        
     </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import { NuxtVueI18n } from "nuxt-i18n";
+import lang from '../../CorsaceAssets/lang/index';
 
 export default Vue.extend({
     data () {
@@ -30,33 +50,124 @@ export default Vue.extend({
             change: false,
         };
     },
+    computed: {
+        availableLocales () {
+            const locales = this.$i18n.locales as NuxtVueI18n.Options.LocaleObject[];
+            if (locales) {
+                const available = locales.filter(i => i.code !== this.$i18n.locale);
+                return available;
+            }
+            return null;
+        },
+    },
+    methods: {
+        switchLocale: function (localeCode: string) {
+            this.$i18n.setLocale(localeCode);
+            this.change = false;
+        },
+        getFlagUrl: function(localCode: string) {
+            return lang[localCode].flag;
+        }
+    }
 });
+
 </script>
 
 <style lang="scss">
+
 .locale {
-    color: #cccccc;
-    padding-right: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    right: 20px;
+
+    height: 100%;
+    width: 90px; 
+    padding-left: 20px;
+
+    color: #cccccc;   
 }
 
 .locale__current {
     display: flex;
-    height: 100%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+
     cursor: pointer;
 }
 
 .locale__flag {
     height: 25px;
-    padding-right: 10px;
+    margin-right: 10px;
+    user-select: none;
 }
 
 .locale__text {
     font-size: 20px;
+    user-select: none;
 }
 
-.locale__selector {
+$selector-white: #fff6ed;
+$selector-orange: #ff890a;
+$selector-backdrop: #363636;
 
+.locale__selector {
+    position: relative;
+    bottom: 3px;
+    transform: translateY(-100%);
+
+    width: 110%;    
+    padding: 5px 0;
+    border-radius: 7px 0 0 0;
+    box-sizing: border-box;
+
+    color: $selector-white;
+    background-color: $selector-orange;
+
+    .backdrop {
+        position: absolute;
+        bottom: 0px;
+        right: -50px;
+        
+        width: 50px;
+        height: 100%;
+        background-color:#363636;
+        box-shadow: inset 3px 0px 3px 0px rgba(0,0,0,0.75);
+    }
+}
+
+.locale__option {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    padding: 5px 0;
+
+    cursor: pointer;
+
+    .locale__flag {
+        margin-left: 10px;
+        margin-right: 8px;
+
+        border: 2px solid;
+        border-color: $selector-white;
+        border-radius: 7px;
+    }
+
+    &:hover {
+        background-color: $selector-white;
+        color: $selector-orange;
+
+        .locale__flag {
+             border-color: black;
+        }
+    }
 }
 </style>
