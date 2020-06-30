@@ -5,13 +5,14 @@
             class="locale__selector"
         >
             <div class="options">
-                <div class="locale__option"
+                <div
                     v-for="locale in availableLocales"
                     :key="locale.code"
+                    class="locale__option"
 
                     @click="switchLocale(locale.code)"
                 >
-                <img  
+                    <img  
                         :src="getFlagUrl(locale.code)" 
                         class="locale__flag" 
                     >
@@ -19,8 +20,8 @@
                         {{ locale.code.toUpperCase() }}
                     </div>
                 </div>
-           </div>
-           <div class="backdrop"></div>
+            </div>
+            <div class="backdrop" />
         </div>
         
         <div 
@@ -35,14 +36,13 @@
                 {{ $i18n.locale.toUpperCase() }}
             </div>
         </div>
-        
     </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
 import { NuxtVueI18n } from "nuxt-i18n";
-import lang from '../../CorsaceAssets/lang/index';
+import lang from "../../CorsaceAssets/lang/index";
 
 export default Vue.extend({
     data () {
@@ -67,8 +67,8 @@ export default Vue.extend({
         },
         getFlagUrl: function(localCode: string) {
             return lang[localCode].flag;
-        }
-    }
+        },
+    },
 });
 
 </script>
