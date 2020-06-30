@@ -5,7 +5,7 @@ const config = new Config;
 const locales: any[] = [];
 
 fs.readdirSync("../CorsaceAssets/lang").forEach(file => {
-    if (file !== "example.json")
+    if (file !== "example.json" && file !== "index.js")
         locales.push({
             code: file.split(".")[0],
             file,
